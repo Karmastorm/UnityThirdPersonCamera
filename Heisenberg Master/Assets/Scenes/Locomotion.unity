@@ -592,6 +592,8 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
+  - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -663,6 +665,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e189725cd50d5e4d9685014e9943197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: 1
+  onlyInPlayMode: 0
+  sceneViewFollowers: []
+--- !u!114 &534669907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c64d0fd498797e408f926205774d570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2064414651}
+  targetHeight: 1.7
+  distance: 12
+  offsetFromWall: 0.1
+  maxDistance: 20
+  minDistance: 0.6
+  xSpeed: 200
+  ySpeed: 200
+  yMinLimit: -80
+  yMaxLimit: 80
+  zoomRate: 40
+  rotationDampening: 3
+  zoomDampening: 5
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  lockToRearOfTarget: 0
+  allowMouseInputX: 1
+  allowMouseInputY: 1
 --- !u!1 &1011521851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,18 +1453,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!95 &2064414654 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: aef9e0d7fbf9f924091a41b93ff4fa44,
-    type: 3}
-  m_PrefabInstance: {fileID: 2064414650}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2064414655 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: aef9e0d7fbf9f924091a41b93ff4fa44,
-    type: 3}
-  m_PrefabInstance: {fileID: 2064414650}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2064414656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,42 +1462,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2064414651}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b216def2ca252840817bbbae8b9f6bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b33ccb814c947f4890df89e634e1b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 2064414654}
-  gamecam: {fileID: 0}
-  rotationDegreePerSecond: 120
-  directionSpeed: 1.5
-  directionDampTime: 0.25
-  speedDampTime: 0.05
-  fovDampTime: 3
-  jumpMultiplier: 1
-  capCollider: {fileID: 2064414652}
-  jumpDist: 1
---- !u!114 &2064414657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064414651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e189725cd50d5e4d9685014e9943197, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  on: 1
-  onlyInPlayMode: 1
-  sceneViewFollowers:
-  - enable: 1
-    positionOffset: {x: 0, y: 5, z: 0}
-    enableFixedRotation: 1
-    fixedRotation: {x: 0, y: 0, z: 0}
-    targetTransform: {fileID: 2064414655}
-    size: 0.01
-    orthographic: 1
-    sceneViewIndex: 0
+  swimming: 0
+  moveStatus: idle
 --- !u!1 &2080718965
 GameObject:
   m_ObjectHideFlags: 0
